@@ -32,11 +32,11 @@ class RecursionTest extends FunSuite {
     val pan = "Pan"
     val roshi = "Roshi"
 
-    assert(Recursion.has(saiyans, bulma) == false)
+    assert(!Recursion.has(saiyans, bulma))
     assert(Recursion.has(saiyans, goku))
     assert(Recursion.has(saiyans, gohan))
     assert(Recursion.has(saiyans, pan))
-    assert(Recursion.has(saiyans, roshi) == false)
+    assert(!Recursion.has(saiyans, roshi))
   }
 
 }
