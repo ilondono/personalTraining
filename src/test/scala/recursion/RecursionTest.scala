@@ -26,17 +26,12 @@ class RecursionTest extends FunSuite {
   test("Telling if a List[String] contains a String given as a parameter using recursion") {
 
     val saiyans = List("Goku", "Vegetta", "Gohan", "Goten", "Trunks", "Pan")
-    val bulma = "Bulma"
-    val goku = "Goku"
-    val gohan = "Gohan"
-    val pan = "Pan"
-    val roshi = "Roshi"
 
-    assert(!Recursion.has(saiyans, bulma))
-    assert(Recursion.has(saiyans, goku))
-    assert(Recursion.has(saiyans, gohan))
-    assert(Recursion.has(saiyans, pan))
-    assert(!Recursion.has(saiyans, roshi))
+    assert(!Recursion.has(saiyans, "Bulma"))
+    assert(Recursion.has(saiyans, "Goku"))
+    assert(Recursion.has(saiyans, "Gohan"))
+    assert(Recursion.has(saiyans, "Pan"))
+    assert(!Recursion.has(saiyans, "Roshi"))
   }
 
 }
