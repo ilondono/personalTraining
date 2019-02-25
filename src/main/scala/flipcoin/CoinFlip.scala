@@ -10,8 +10,8 @@ object CoinFlip extends App {
   val r = new Random()
   mainloop(s, r)
 
-  //@tailrec TODO
-  def mainloop(gameState: GameState, random: Random) = {
+  @tailrec
+  def mainloop(gameState: GameState, random: Random): Unit = {
 
     showPrompt
 
@@ -22,12 +22,22 @@ object CoinFlip extends App {
         val coinTossResult = tossCoin(random)
         val newNumFlips = gameState.numFlips + 1
 
-        if (userInput == coinTossResult) {
-// TODO
-        } else {
-// TODO
-        }
+        (userInput == coinTossResult) match {
 
+          case true => {
+            val newCorrectGuesses = gameState.numCorrectGuesses + 1
+            val newState = GameState(newNumFlips, newCorrectGuesses)
+            printGameState(printableResult(coinTossResult), newState)
+            mainloop(newState, random)
+          }
+
+          case false => {
+            val newState = GameState(newNumFlips, gameState.numCorrectGuesses)
+            printGameState(printableResult(coinTossResult), newState)
+            mainloop(newState, random)
+          }
+
+        }
       }
 
       case _ => {
