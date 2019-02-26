@@ -26,13 +26,13 @@ object CoinFlip extends App {
 
           case true => {
             val newCorrectGuesses = gameState.numCorrectGuesses + 1
-            val newState = GameState(newNumFlips, newCorrectGuesses)
+            val newState = gameState.copy(newNumFlips, newCorrectGuesses)
             printGameState(printableResult(coinTossResult), newState)
             mainloop(newState, random)
           }
 
           case false => {
-            val newState = GameState(newNumFlips, gameState.numCorrectGuesses)
+            val newState = gameState.copy(newNumFlips, gameState.numCorrectGuesses)
             printGameState(printableResult(coinTossResult), newState)
             mainloop(newState, random)
           }
