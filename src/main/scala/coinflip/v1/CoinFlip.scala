@@ -1,6 +1,7 @@
-package flipcoin.v1
+package coinflip.v1
 
-import CoinFlipUtils._
+import coinflip.CoinFlipUtils._
+import coinflip.GameState
 
 import scala.annotation.tailrec
 import scala.util.Random

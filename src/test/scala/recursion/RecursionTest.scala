@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 
 class RecursionTest extends FunSuite {
 
-  test("adding the Int values of a List[Int] using regular and tail recursion") {
+  test("adding the Int values of userInput List[Int] using regular and tail recursion") {
     val testList = List(2, 4, 6, 8, 10)
     assert(Recursion.sum(testList) == 30)
     assert(Recursion.sumTailRecursive(testList) == 30)
@@ -15,7 +15,7 @@ class RecursionTest extends FunSuite {
     assert(Recursion.sumTailRecursive(testList2) == 15)
   }
 
-  test("multiplying all the  Int values of a List[Int] using recursion") {
+  test("multiplying all the  Int values of userInput List[Int] using recursion") {
 
     val testList = List(1, 2, 3, 4, 5, 6)
     assert(Recursion.prod(testList) == 720)
@@ -25,7 +25,7 @@ class RecursionTest extends FunSuite {
     assert(Recursion.prod(otherList) == 0)
   }
 
-  test("Telling if a List[String] contains a String given as a parameter using recursion") {
+  test("Telling if userInput List[String] contains userInput String given as userInput parameter using recursion") {
 
     val saiyans = List("Goku", "Vegetta", "Gohan", "Goten", "Trunks", "Pan")
 

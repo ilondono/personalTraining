@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 
 class MyWrapperTest extends FunSuite{
 
-  test("Using MyWrapper monad in a for expression") {
+  test("Using MyWrapper monad in userInput for expression") {
 
     val result = for {
       a <- Utils.duplicate(1)

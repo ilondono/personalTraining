@@ -1,4 +1,4 @@
-package flipcoin.v1
+package coinflip
 
 import scala.io.StdIn.readLine
 import scala.util.Random
