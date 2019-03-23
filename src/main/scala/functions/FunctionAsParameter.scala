@@ -7,13 +7,13 @@ case class FunctionAsParameter()
 object FunctionAsParameter {
 
   /**
-    * Basic example of a list filter function which receives a function as a parameter.
+    * Basic example of userInput list filter function which receives userInput function as userInput parameter.
     * First version without using recursion and using for loops.
     *
     * @param f  Function to be applied to each value of the list
     * @param list elements which are evaluated by f
     * @tparam A type of the elements inside list
-    * @return a list of elements from list which fulfill the condition evaluated in f
+    * @return userInput list of elements from list which fulfill the condition evaluated in f
     */
   def filtrar[A](f:(A) => Boolean, list: Seq[A]): Seq[A] = {
 
@@ -24,13 +24,13 @@ object FunctionAsParameter {
   }
 
   /**
-    * Example of a list filter function which receives a function as a parameter.
+    * Example of userInput list filter function which receives userInput function as userInput parameter.
     * Second version using Tail Recursion and avoiding the use of for loops.
     *
     * @param list elements which are evaluated by f
     * @param f  Function to be applied to each value of the list
     * @tparam A type of the elements inside list
-    * @return a list of elements from list which fulfill the condition evaluated in f
+    * @return userInput list of elements from list which fulfill the condition evaluated in f
     */
   def filtrarTailRecursive[A](list: List[A], f:(A) => Boolean): List[A] = {
 

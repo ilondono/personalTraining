@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 
 class GenericDebuggableTest extends FunSuite {
 
-  test("Using GenericDebuggable (with generics - Int) in a for expression as an extension of MyWrapper monad's functionality") {
+  test("Using GenericDebuggable (with generics - Int) in userInput for expression as an extension of MyWrapper monad's functionality") {
 
     val result = for {
       a <- Utils.duplicateDebuggableGenerics(100)
@@ -20,7 +20,7 @@ class GenericDebuggableTest extends FunSuite {
 
   }
 
-  test("Using GenericDebuggable (with generics - Float) in a for expression as an extension of MyWrapper monad's functionality") {
+  test("Using GenericDebuggable (with generics - Float) in userInput for expression as an extension of MyWrapper monad's functionality") {
 
     val result = for {
       a <- Utils.duplicateFloat(1.5f)

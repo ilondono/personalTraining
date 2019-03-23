@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 
 class DebuggableTest extends FunSuite {
 
-  test("Using Debuggable monad in a for expression as an extension of MyWrapper monad's functionality") {
+  test("Using Debuggable monad in userInput for expression as an extension of MyWrapper monad's functionality") {
 
     val result = for {
       a <- Utils.duplicateDebuggable(1)

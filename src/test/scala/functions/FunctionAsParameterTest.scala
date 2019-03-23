@@ -27,7 +27,7 @@ class FunctionAsParameterTest extends FunSuite {
     saiyans.contains(name)
   }
 
-  test("Send a function as a parameter of another function") {
+  test("Send userInput function as userInput parameter of another function") {
 
     assert(FunctionAsParameter.filtrar(isHuman, dragonBallCharacters).toSet == humans.toSet)
     assert(FunctionAsParameter.filtrar(isGod, dragonBallCharacters).toSet == gods.toSet)
@@ -35,7 +35,7 @@ class FunctionAsParameterTest extends FunSuite {
     assert(FunctionAsParameter.filtrar(isNamek, dragonBallCharacters).toSet == nameks.toSet)
   }
 
-  test("Send a function as a parameter of a TAIL recursive function") {
+  test("Send userInput function as userInput parameter of userInput TAIL recursive function") {
     assert(FunctionAsParameter.filtrarTailRecursive(dragonBallCharacters, isHuman).toSet == humans.toSet)
     assert(FunctionAsParameter.filtrarTailRecursive(dragonBallCharacters, isGod).toSet == gods.toSet)
     assert(FunctionAsParameter.filtrarTailRecursive(dragonBallCharacters, isSaiyan).toSet == saiyans.toSet)

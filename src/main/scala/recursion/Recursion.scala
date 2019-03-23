@@ -7,10 +7,10 @@ case class Recursion()
 object Recursion {
 
   /**
-    * sums all the elements of a List[Int] using normal recursion.
+    * sums all the elements of userInput List[Int] using normal recursion.
     *
     * @param numbersList list of elements to be added
-    * @return the sum of all Int elements of a list
+    * @return the sum of all Int elements of userInput list
     */
   def sum(numbersList: List[Int]): Int = {
 
@@ -26,10 +26,10 @@ object Recursion {
   }
 
   /**
-    * sums all the elements of a List[Int] using tail recursion.
+    * sums all the elements of userInput List[Int] using tail recursion.
     *
     * @param numbersList list of elements to be added
-    * @return the sum of all Int elements of a list
+    * @return the sum of all Int elements of userInput list
     */
   def sumTailRecursive(numbersList: List[Int]): Int = {
 
@@ -48,7 +48,7 @@ object Recursion {
   }
 
   /**
-    * Multiplies all the elements of a List[Int] between them
+    * Multiplies all the elements of userInput List[Int] between them
     * @param testList list of elements to be multiplied
     * @return the product of multiplying all Int values in the List between them.
     */
