@@ -6,7 +6,6 @@ case class HackerRankExercises()
 
 object HackerRankExercises {
 
-
   def sumArray(arr: Array[Int]): Int = {
 
     var result = 0
@@ -78,17 +77,25 @@ object HackerRankExercises {
     }
     compareTrip(a.toList, b.toList, 0, 0)
   }
+
+  def aVeryBigSum(array: Array[Long]): Long = {
+
+    @tailrec
+    def longSum(list: List[Long], total: Long): Long = {
+
+      list match {
+        case head :: tail => longSum(tail, total + head)
+        case Nil => total
+      }
+    }
+
+    longSum(array.toList, 0)
+  }
+
+  def diagonalDifference(array: Array[Array[Int]]): Int = {
+    ???
+  }
 }
 
-
-/*listB match {
-  case headB :: tailB => if (headA > headB) {
-    compareTrip(tailA, tailB, totalA + 1, totalB)
-  } else if (headA < headB) {
-    compareTrip(tailA, tailB, totalA, totalB + 1)
-  } else {
-    compareTrip(tailA, tailB, totalA, totalB)
-  }
-}*/
 
 
