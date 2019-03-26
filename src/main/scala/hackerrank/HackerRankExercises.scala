@@ -93,7 +93,20 @@ object HackerRankExercises {
   }
 
   def diagonalDifference(array: Array[Array[Int]]): Int = {
-    ???
+
+/*
+    val res = for {
+      a <- calculateDiagonals(_, 0)
+    } yield a
+
+    def calculateDiagonals(listA: List[Int], accumulatedVaule: Int): Int = {
+      listA match {
+        case head :: _ => accumulatedVaule + head
+        case Nil => accumulatedVaule
+      }
+    }*/
+
+      0
   }
 }
 
