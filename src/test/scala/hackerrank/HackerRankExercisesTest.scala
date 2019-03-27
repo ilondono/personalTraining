@@ -75,15 +75,7 @@ class HackerRankExercisesTest extends FunSuite {
 
     println("The result was: " + result)
 
-
-    val fin = array.foreach(_.drop(1))
-
-    println(fin)
-
-
-
-
-    assert(result == 0)
+    assert(result == 15)
   }
 
 
