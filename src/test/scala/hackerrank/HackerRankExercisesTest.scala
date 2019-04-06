@@ -78,5 +78,14 @@ class HackerRankExercisesTest extends FunSuite {
     assert(result == 15)
   }
 
+  test("Plus Minus") {
 
+    val input: Array[Int] = Array(-4, 3, -9, 0, 4, 1)
+
+    println("Array Size: " + input.length)
+
+    val result: Array[Double] = HackerRankExercises.plusMinus(input)
+
+    assert(result ===Array(0.5, 0.333333, 0.166667))
+  }
 }

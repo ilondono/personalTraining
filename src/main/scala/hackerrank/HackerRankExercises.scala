@@ -38,9 +38,6 @@ object HackerRankExercises {
     sumList(ar.toList, 0)
   }
 
-
-
-
   def compareTriplets(arrayA: Array[Int], arrayB: Array[Int]): Array[Int] = {
 
     def compareTrip(listA: List[Int], listB: List[Int], totalA: Int, totalB: Int): Array[Int] = {
@@ -59,8 +56,6 @@ object HackerRankExercises {
     compareTrip(arrayA.toList, arrayB.toList, 0, 0)
   }
 
-
-
   def compareTripletsV1(a: Array[Int], b: Array[Int]): Array[Int] = {
 
     @tailrec
@@ -78,6 +73,7 @@ object HackerRankExercises {
     compareTrip(a.toList, b.toList, 0, 0)
   }
 
+
   def aVeryBigSum(array: Array[Long]): Long = {
 
     @tailrec
@@ -91,6 +87,7 @@ object HackerRankExercises {
 
     longSum(array.toList, 0)
   }
+
 
   def diagonalDifference(array: Array[Array[Int]]): Int = {
 
@@ -112,6 +109,41 @@ object HackerRankExercises {
     (arrayDiagonals.head.head - arrayDiagonals.tail.head.head).abs
   }
 
+  def plusMinus(input: Array[Int]): Array[Double] = {
+
+
+    // create a class to save state
+    @tailrec
+    def lookSign(values: List[Int], state: Array[Double]): Array[Double] = {
+
+      values match {
+        case head :: tail => {
+
+          head match {
+            case 0 => lookSign(tail, Array(state(0), state(1), state(2) + 1))
+            case _ => {
+
+              if (head > 0){
+                lookSign(tail, Array(state(0) + 1, state(1), state(2)))
+              } else {
+                lookSign(tail, Array(state(0), state(1) + 1, state(2)))
+              }
+            }
+          }
+        }
+        case Nil => state
+      }
+    }
+
+    val result = lookSign(input.toList, Array(0, 0, 0))
+
+    val percentage = for {
+      a <- result
+    } yield BigDecimal(a / input.length).setScale(6, BigDecimal.RoundingMode.HALF_EVEN).toDouble
+
+    percentage.foreach(println(_))
+    percentage
+  }
 }
 
 
