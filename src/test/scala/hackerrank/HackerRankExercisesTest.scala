@@ -86,6 +86,12 @@ class HackerRankExercisesTest extends FunSuite {
 
     val result: Array[Double] = HackerRankExercises.plusMinus(input)
 
-    assert(result ===Array(0.5, 0.333333, 0.166667))
+    assert(result === Array(0.5, 0.333333, 0.166667))
+  }
+
+  test ("Stairs...") {
+    HackerRankExercises.staircase(5)
+
+    assert(true)
   }
 }

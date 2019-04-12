@@ -144,6 +144,25 @@ object HackerRankExercises {
     percentage.foreach(println(_))
     percentage
   }
+
+
+  def staircase(n: Int): Unit = {
+
+    @tailrec
+    def printFloor(floors: Int, currentFloor: Int): Unit = {
+
+      (floors > currentFloor) match {
+        case true => {
+          print(" " * (floors - currentFloor))
+          print(("#" * currentFloor) + "\n")
+          printFloor(floors, currentFloor + 1)
+        }
+        case false => print("#" * (currentFloor))
+      }
+    }
+
+    printFloor(n, 1)
+  }
 }
 
 
