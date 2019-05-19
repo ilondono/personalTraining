@@ -4,26 +4,29 @@ import scala.annotation.tailrec
 
 object SquareRoot extends App {
 
-  println(squareRoot(1.0e60))
+  def sqrt(base: Double): Double = {
 
-  def squareRoot(x: Double) = {
-    println("La raíz cuadrada de " + x + " es: ")
-    BigDecimal(calculateSquareRoot(1, x)).setScale(11, BigDecimal.RoundingMode.HALF_EVEN).toDouble
+    @tailrec
+    def calculateSquareRoot(guess: Double): Double = {
+      if (isGoodEnoughGuess(guess)) guess
+      else calculateSquareRoot(improve(guess))
+    }
+
+    def abs(x: Double): Double = if (x < 0) -x else x
+
+    def improve(guess: Double) = (guess + (base / guess)) / 2
+
+    def isGoodEnoughGuess(guess: Double) = {
+      abs((guess * guess) - base) / base < 0.00000000001
+    }
+
+    println("La raíz cuadrada de " + base + " es: ")
+    BigDecimal(calculateSquareRoot(1)).setScale(10, BigDecimal.RoundingMode.HALF_EVEN).toDouble
   }
 
-  @tailrec
-  private def calculateSquareRoot(guess: Double, base: Double): Double = {
-    if (isGoodEnoughGuess(guess, base)) guess
-    else calculateSquareRoot(improve(guess, base), base)
-  }
+  println(sqrt(1.0e60))
+  println(sqrt(9))
+  println(sqrt(81))
+  println(sqrt(121))
 
-  private def abs(x: Double) : Double = if (x < 0) -x else x
-
-  private def improve(guess: Double, base: Double) = (guess + (base/guess)) / 2
-
-  private def isGoodEnoughGuess(guess: Double, base: Double) = {
-
-    abs((guess * guess) - base) / base < 0.00000000001
-
-  }
 }
