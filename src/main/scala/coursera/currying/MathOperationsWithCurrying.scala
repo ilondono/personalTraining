@@ -127,4 +127,47 @@ object MathOperationsWithCurrying extends App {
   def productMapReduce(f: Int => Int)(a: Int, b: Int): Int = mapReduce(f, (x, y) => x * y, 1)(a, b)
 
   println("productMapReduce() => " + productMapReduce(x => x)(1, 5))
+
+
+  /*********** FIND THE FIXED POINT OF A FUNCTION: ************/
+  val tolerance = 0.0001
+
+  def isCloseEnough(x: Double, y: Double) = {
+    (((x - y) / x)  * (-1)) / x < tolerance
+  }
+
+  def fixedPoint(f: Double => Double)(firstGuess: Double) = {
+
+    def iterate(x: Double): Double = {
+      val nextGuess = f(x)
+      if (isCloseEnough(x, nextGuess)) nextGuess //BigDecimal(nextGuess).setScale(3, BigDecimal.RoundingMode.HALF_EVEN).toDouble
+      else iterate(nextGuess)
+    }
+
+    iterate(firstGuess)
+  }
+
+  println("Fixed point for f(x) = 1 + x/2 :" + fixedPoint(x => 1 + x/2)(0))
+
+  /*********** FIND THE SQUARE ROOT OF X: ************/
+  // TODO: Does not work with all values.
+  def sqrt(x: Double) = {
+    fixedPoint(y => (y + x / y) / 2)(1.0)
+  }
+
+  println("Square root of 16: " + sqrt(2))
+
+  /********* ANOTHER EXAMPLE *************/
+
+  def averageDamp(f: Double => Double)(x: Double) = {
+    (x + f(x)) / 2
+  }
+
+  def sqrtTwo(x: Double) = {
+    fixedPoint(averageDamp(y => x / y))(1)
+  }
+
+  println("sqrtTwo 16: " + sqrtTwo(2))
+
+
 }
